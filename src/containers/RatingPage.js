@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import getSet from '../../services/mtg-api';
 import Card from '../components/Card';
 import styles from './RatingPage.css';
+import Rating from '../components/Rating';
 
 const RatingPage = () => {
   const [index, setIndex] = useState(0);
@@ -40,6 +41,7 @@ const RatingPage = () => {
       <button className={`${styles.button} ${styles.buttonLeft}`} disabled={index <= 0} onClick={previousCard}>{'◁'}</button>
       <Card img={uri} />
       <button className={`${styles.button} ${styles.buttonRight}`} onClick={nextCard}>{'◁'}</button>
+      <Rating />
     </div>
   );
 };
