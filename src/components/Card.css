@@ -1,0 +1,11 @@
+.cardWrapper {
+  border: blue solid 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardImg {
+  border: solid red 2px;
+  width: 80vw;
+}
