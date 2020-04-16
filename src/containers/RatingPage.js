@@ -36,9 +36,10 @@ const RatingPage = () => {
 
   return (
     <div className={styles.ratingPageWrapper}>
-      <button disabled={index <= 0} onClick={previousCard}>{'<'}</button>
+      <h1 className={styles.title}>Ikoria Set Review</h1>
+      <button className={`${styles.button} ${styles.buttonLeft}`} disabled={index <= 0} onClick={previousCard}>{'◁'}</button>
       <Card img={uri} />
-      <button onClick={nextCard}>{'>'}</button>
+      <button className={`${styles.button} ${styles.buttonRight}`} onClick={nextCard}>{'◁'}</button>
     </div>
   );
 };
