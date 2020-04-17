@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "reset-db": "node db/drop-and-create.js",
-    "seed": "node db/seed-set.js"
+    "seed": "node db/seed-set.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
