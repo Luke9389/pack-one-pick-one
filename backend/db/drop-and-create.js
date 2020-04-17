@@ -8,6 +8,7 @@ const createTables = `CREATE TABLE cards(
         cmc TINYINT,
         type_line VARCHAR(255),
         colors VARCHAR(255),
+        color_identity VARCHAR(255),
         expansion VARCHAR(255),
         rarity VARCHAR(255),
         rating_community INT,

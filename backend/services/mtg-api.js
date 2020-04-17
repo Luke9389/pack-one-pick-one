@@ -7,4 +7,5 @@ function getSet(set = '', page = 1) {
     });
 }
 
+// eslint-disable-next-line no-undef
 module.exports = getSet;
