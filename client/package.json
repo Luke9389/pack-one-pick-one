@@ -21,7 +21,6 @@
     "start": "webpack-dev-server --hot --mode development --devtool eval-source-map",
     "build": "webpack -p --devtool source-map"
   },
-  "proxy": "http://localhost:3000",
   "keywords": [],
   "author": "",
   "license": "ISC",

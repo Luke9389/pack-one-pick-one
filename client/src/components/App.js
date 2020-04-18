@@ -4,18 +4,15 @@ import '../../reset.css';
 
 export default function App() {
 
-  //USE HOOKS FOR EXPRESS API CALL
-
   console.log('APP');
 
-  useEffect(() => {
-    async function getData() {
-      const data = await fetch('/api');
-      console.log(data.json());
-    }
-    getData();
-  }, []);
+  fetch('http:localhost:3000/api')
+    .then(res => res.json())
+    .then(res => {
+      console.log(res);
+    });
+
+
 
   return <h1>sup</h1>;
 }
-
