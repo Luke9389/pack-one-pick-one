@@ -1,0 +1,27 @@
+{
+  "name": "pack-one-pick-one",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "reset-db": "node db/drop-and-create.js",
+    "seed": "node db/seed-set.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luke9389/pack-one-pick-one.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luke9389/pack-one-pick-one/issues"
+  },
+  "homepage": "https://github.com/Luke9389/pack-one-pick-one#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "superagent": "^5.2.2"
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import getSet from '../../services/mtg-api';
+// import getSet from '../../services/mtg-api';
 import Card from '../components/Card';
 import styles from './RatingPage.css';
 import Rating from '../components/Rating';
