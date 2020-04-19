@@ -5,6 +5,7 @@
 
 const client = require('./client.js');
 const getSet = require('../services/mtg-api');
+const getCardData = require('../services/get-card-data');
 
 client.connect();
 
@@ -17,22 +18,7 @@ function seedData(set, page) {
   getSet(set, page)
     .then(res => {
       res.data.forEach(c => {
-
-        //ES6 guarantees object key order for non-integer keys
-        const cardData = {
-          'id': c.id,
-          'name': c.name,
-          'image_uri': c.image_uris.png,
-          'cmc': c.cmc,
-          'type_line': c.type_line,
-          'colors': c.colors.length ? c.colors.join() : 'C',
-          'color_identity': c.color_identity.length ? c.color_identity.join() : 'C',
-          'expansion': c.set,
-          'rarity': c.rarity
-        };
-
-        console.log(cardData.name);
-
+        const cardData = getCardData(c.layout, c);
         return client.query(
           `INSERT INTO cards(${Object.keys(cardData).join(', ')}) 
           VALUES(${'?, '.repeat(Object.keys(cardData).length - 1)}?);`,
