@@ -65,8 +65,7 @@ const tableFunctions = {
 
       sql = `CREATE TABLE ${table}(
           id MEDIUMINT PRIMARY KEY AUTO_INCREMENT,
-          user_id VARCHAR(255),
-          FOREIGN KEY (user_id) REFERENCES users(id)
+          user_id VARCHAR(255) REFERENCES users(id)
           );`;
     }
 
