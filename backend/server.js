@@ -13,11 +13,17 @@ app.use(express.json());
 app.use(express.static('public'));
 
 
-app.get('/api', (req, res) => {
-  client.query('SELECT * FROM cards', function(err, rows, fields) {
+app.get('/api/allCards', (req, res) => {
+  client.query('SELECT * FROM cards', function (err, rows) {
     res.send(rows);
   });
+});
 
+app.get('/api/setReview/:set', (req, res) => {
+  const { set } = req.params;
+  client.query(`SELECT * FROM cards WHERE expansion = '${set}'`, function (err, rows) {
+    res.send(rows);
+  });
 });
 
 

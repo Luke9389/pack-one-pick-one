@@ -2,11 +2,13 @@ import React, { useEffect } from 'react';
 // import RatingPage from '../containers/RatingPage';
 import '../../reset.css';
 
+const BACKEND_URL = process.env.BACKEND_URL;
+
 export default function App() {
 
   console.log('APP');
 
-  fetch('http:localhost:3000/api')
+  fetch(`${BACKEND_URL}/api/setReview/soi`)
     .then(res => res.json())
     .then(res => {
       console.log(res);
