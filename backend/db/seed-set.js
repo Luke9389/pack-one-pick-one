@@ -27,17 +27,6 @@ function seedData(set, page) {
     .then(res => {
       res.data.forEach(c => {
         const cardData = getCardData(c.layout, c);
-        //   cardData: {
-        //   id: '610bb98c-d66a-44cc-92e2-a80d700b59e4',
-        //   name: 'Parcelbeast',
-        //   image_uri: 'https://img.scryfall.com/cards/png/front/6/1/610bb98c-d66a-44cc-92e2-a80d700b59e4.png?1586266302',
-        //   cmc: 4,
-        //   type_line: 'Creature — Elemental Beast',
-        //   colors: 'G,U',
-        //   color_identity: 'G,U',
-        //   expansion: 'iko',
-        //   rarity: 'uncommon'
-        // }
         client.query(
           `ALTER TABLE ${set}_reviews
           ADD COLUMN \`${cardData.name}\` TEXT NOT NULL`, 
