@@ -1,29 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react';
-// import getSet from '../../services/mtg-api';
+import useSet from '../components/hooks/useSet';
 import Card from '../components/Card';
 import styles from './RatingPage.css';
 import Rating from '../components/Rating';
 
 const RatingPage = () => {
   const [index, setIndex] = useState(0);
-  const [set, setSet] = useState([]);
   const [uri, setUri] = useState('');
   const pageLoaded = useRef(false);
+  const cards = useSet('iko', 'cmc', 'desc');
 
   useEffect(() => {
-    getSet('iko')
-      .then(res => {
-        setSet(res);
-        return res;
-      })
-      .then(res => {
-        setUri(res.data[index].image_uris.png);
-        pageLoaded.current = true;
-      });
-  }, []);
+    if(cards) {
+      setUri(cards[0].image_uri);
+      pageLoaded.current = true;
+    }
+  }, [cards]);
 
   useEffect(() => {
-    if(pageLoaded.current) setUri(set.data[index].image_uris.png);
+    if(pageLoaded.current) setUri(cards[index].image_uri);
   }, [index]);
 
   const nextCard = () => {
