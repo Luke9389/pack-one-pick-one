@@ -65,7 +65,9 @@ const tableFunctions = {
 
       sql = `CREATE TABLE ${table}(
           id MEDIUMINT PRIMARY KEY AUTO_INCREMENT,
-          card_id VARCHAR(255))`;
+          user_id VARCHAR(255),
+          FOREIGN KEY (user_id) REFERENCES users(id)
+          );`;
     }
 
     connectAndQuery(sql);
