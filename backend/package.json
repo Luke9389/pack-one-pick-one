@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "reset-db": "node db/drop-and-create.js",
+    "drop-table": "node db/table-functions.js drop",
+    "create-table": "node db/table-functions.js create",
+    "reset-db": "npm run drop-table ALL_TABLES && npm run create-table users && npm run create-table cards",
     "seed": "node db/seed-set.js",
     "start": "node server.js"
   },
@@ -19,6 +21,7 @@
   },
   "homepage": "https://github.com/Luke9389/pack-one-pick-one#readme",
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
