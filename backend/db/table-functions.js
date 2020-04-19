@@ -63,7 +63,7 @@ const tableFunctions = {
 
     } else {
 
-      sql = `CREATE TABLE ${table}(
+      sql = `CREATE TABLE ${table}_reviews(
           id MEDIUMINT PRIMARY KEY AUTO_INCREMENT,
           user_id VARCHAR(255) REFERENCES users(id)
           );`;
