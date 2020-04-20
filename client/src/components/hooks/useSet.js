@@ -16,7 +16,6 @@ const useSet = (set, sortBy, dir) => {
   });
 
   return cards;
-
 };
 
 export default useSet;
