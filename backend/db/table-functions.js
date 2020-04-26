@@ -63,9 +63,10 @@ const tableFunctions = {
 
     } else {
 
-      sql = `CREATE TABLE ${table}(
+      sql = `CREATE TABLE ${table}_reviews(
           id MEDIUMINT PRIMARY KEY AUTO_INCREMENT,
-          card_id VARCHAR(255))`;
+          user_id VARCHAR(255) REFERENCES users(id)
+          );`;
     }
 
     connectAndQuery(sql);
