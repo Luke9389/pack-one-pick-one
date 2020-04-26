@@ -1,0 +1,36 @@
+.ratingPageWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 10vw 80vw 10vw;
+  grid-template-rows: 7vh 68vh 25vh;
+  grid-template-areas: "title title title"
+                       "prev card next"
+                       ". other .";
+  background-color: black;
+}
+
+.button {
+  font-size: 3rem;
+  color: white;
+  background-color: transparent;
+  border: none;
+}
+
+.buttonLeft {
+  grid-area: prev;
+}
+
+.buttonRight {
+  grid-area: next;
+  transform: rotate(180deg);
+}
+
+.title{
+  color: white;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  grid-area: title;
+}

@@ -1,0 +1,10 @@
+.cardWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: card;
+}
+
+.cardImg {
+  width: 70vw;
+}
